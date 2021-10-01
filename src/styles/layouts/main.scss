@@ -1,0 +1,30 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Gemunu Libre', sans-serif;
+  &__inputlabel {
+    color: cadetblue;
+    padding: 20px;
+    font-size: 20px;
+    @media all and (min-width: 768px) {
+      font-size: 50px;
+    }
+  }
+  &__inputform {
+    background-color: cadetblue;
+    padding: 5px;
+    height: 30px;
+    width: 200px;
+    color: white;
+    font-size: 20px;
+    font-family: 'Gemunu Libre', sans-serif;
+    border: solid yellowgreen 5px;
+    @media all and (min-width: 768px) {
+      height: 40px;
+      width: 400px;
+      font-size: 50px;
+    }
+  }
+}
