@@ -20,11 +20,20 @@
     color: white;
     font-size: 20px;
     font-family: 'Gemunu Libre', sans-serif;
+    border-radius: 5px;
     border: solid yellowgreen 5px;
+    box-shadow: 1.5px 1.5px 6px #bdff80;
     @media all and (min-width: 768px) {
       height: 40px;
       width: 400px;
       font-size: 50px;
     }
   }
+}
+
+.h2 {
+  text-align: center;
+  font-size: 60px;
+  font-family: 'Gemunu Libre', sans-serif;
+  color: yellowgreen;
 }

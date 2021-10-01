@@ -21,6 +21,7 @@ function App() {
             className="form__inputform"
           />
         </form>
+        <h2 className="h2">Characters</h2>
         <ul>
           <li>
             <img src="" alt=""></img>
