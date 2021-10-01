@@ -1,6 +1,18 @@
 import '../styles/App.scss';
 import logoRaM from '../images/RaM.png';
+import api from '../services/listApi';
+import { useEffect, useState } from 'react';
+import CharacterList from './CharacterList';
+
 function App() {
+  const [characterData, setcharacterData] = useState([]);
+
+  useEffect(() => {
+    api.getApi().then((initialdata) => {
+      setcharacterData(initialdata);
+    });
+  }, []);
+
   return (
     <div>
       <header className="header">
@@ -13,7 +25,9 @@ function App() {
       </header>
       <main>
         <form action="" className="form">
-          <label className="form__inputlabel">Wubba lubba lub lub</label>
+          <label htmlFor="text" className="form__inputlabel">
+            Wubba lubba lub lub
+          </label>
           <input
             type="text"
             name="name"
@@ -22,14 +36,7 @@ function App() {
           />
         </form>
         <h2 className="h2">Characters</h2>
-        <ul>
-          <li>
-            <img src="" alt=""></img>
-            <p>Nombre</p>
-            <p>Especie</p>
-            <p>Status</p>
-          </li>
-        </ul>
+        <CharacterList characterData={characterData} />
       </main>
       <footer>This is the footer</footer>
     </div>
