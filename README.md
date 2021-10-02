@@ -1,9 +1,11 @@
-This a Rick and Morty project created with React!
+<h3>This a Rick and Morty´s project created with React!👽</h3>
 
-Here you can find a lot of info about this show.
+Here you can find a lot of info about this show.👾
 
-You can find characters, the origin of the characters, if they are alive or death... and a lot of more things!
+You can find characters, the origin of the characters, 
+if they are alive or death... and a lot of more things!✨
 
-If you want to view this webpage, there is a direct link above, near to the code of the github repository.
+If you want to view this webpage, there is a direct link above, 
+near to the code of the github repository.☝
 
-Thanks for your attention! :)
+Thanks for your attention! :) 💞
