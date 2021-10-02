@@ -2,8 +2,10 @@
 
 Here you can find a lot of info about this show.👾
 
-You can find characters, the origin of the characters, if they are alive or death... and a lot of more things!✨
+You can find characters, the origin of the characters, 
+if they are alive or death... and a lot of more things!✨
 
-If you want to view this webpage, there is a direct link above, near to the code of the github repository.☝
+If you want to view this webpage, there is a direct link above, 
+near to the code of the github repository.☝
 
-<small>Thanks for your attention! :) 💞</small>
+Thanks for your attention! :) 💞
