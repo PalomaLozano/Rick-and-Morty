@@ -1,6 +1,6 @@
 This a Rick and Morty´s project created with React!👽
 
-Here you can find a lot of info about this show.📼
+Here you can find a lot of info about this show.📹
 
 You can find characters, the origin of the characters, if they are alive or death... and a lot of more things!✨
 
