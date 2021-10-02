@@ -1,17 +1,38 @@
+import { useEffect, useState } from 'react';
+import { Route, Switch, useRouteMatch } from 'react-router-dom';
 import '../styles/App.scss';
 import logoRaM from '../images/RaM.png';
 import api from '../services/listApi';
-import { useEffect, useState } from 'react';
 import CharacterList from './CharacterList';
+import CharacterDetail from './CharacterDetail';
+import Filters from './Filters';
 
 function App() {
-  const [characterData, setcharacterData] = useState([]);
+  const [characterData, setCharacterData] = useState([]);
+  const [characterName, setCharacterName] = useState('');
+  const routeCharacter = useRouteMatch('/character/:id');
+
+  const characterId = routeCharacter !== null ? routeCharacter.params.id : '';
+
+  const selectedCharacter = characterData.find(
+    (character) => character.id === parseInt(characterId)
+  );
 
   useEffect(() => {
-    api.getApi().then((initialdata) => {
-      setcharacterData(initialdata);
+    api.getApi().then((initialData) => {
+      setCharacterData(initialData);
     });
   }, []);
+
+  const handleCharacter = (value) => {
+    setCharacterName(value);
+  };
+
+  const filteredcharacterData = characterData.filter((character) =>
+    character.name
+      .toLocaleLowerCase()
+      .includes(characterName.toLocaleLowerCase())
+  );
 
   return (
     <div>
@@ -24,19 +45,31 @@ function App() {
         />
       </header>
       <main>
-        <form action="" className="form">
-          <label htmlFor="text" className="form__inputlabel">
-            Wubba lubba lub lub
-          </label>
-          <input
-            type="text"
-            name="name"
-            id="search"
-            className="form__inputform"
-          />
-        </form>
-        <h2 className="h2">Characters</h2>
-        <CharacterList characterData={characterData} />
+        <Switch>
+          <Route exact path="/character/:id">
+            <section>
+              <CharacterDetail character={selectedCharacter} />
+            </section>
+          </Route>
+
+          <Route exact path="/">
+            <section>
+              <Filters
+                characterName={characterName}
+                handleCharacter={handleCharacter}
+              />
+            </section>
+            <section>
+              <CharacterList characterData={filteredcharacterData} />
+            </section>
+          </Route>
+
+          <Route>
+            <section>
+              <p>Oh! This page doesn´t exist! 😓 </p>
+            </section>
+          </Route>
+        </Switch>
       </main>
       <footer>This is the footer</footer>
     </div>

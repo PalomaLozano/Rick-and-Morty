@@ -3,4 +3,8 @@
   text-decoration: none;
   list-style-type: none;
   box-sizing: content-box;
+  max-width: 768px;
+  @media all and (min-width: 768px) {
+    max-width: 100%;
+  }
 }

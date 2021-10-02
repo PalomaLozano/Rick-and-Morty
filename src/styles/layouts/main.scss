@@ -1,22 +1,24 @@
 .form {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   font-family: 'Gemunu Libre', sans-serif;
   &__inputlabel {
-    color: cadetblue;
-    padding: 20px;
+    color: rgb(138, 214, 218);
+    padding: 25px;
+    padding-right: 20px;
     font-size: 20px;
     @media all and (min-width: 768px) {
       font-size: 50px;
     }
   }
   &__inputform {
-    background-color: cadetblue;
+    background-color: rgb(138, 214, 218);
     padding: 5px;
+    margin-right: 20px;
     height: 30px;
-    width: 200px;
+    width: 150px;
     color: white;
     font-size: 20px;
     font-family: 'Gemunu Libre', sans-serif;
@@ -26,7 +28,7 @@
     @media all and (min-width: 768px) {
       height: 40px;
       width: 400px;
-      font-size: 50px;
+      font-size: 35px;
     }
   }
 }
@@ -36,8 +38,66 @@
   font-size: 60px;
   font-family: 'Gemunu Libre', sans-serif;
   color: yellowgreen;
+  padding-bottom: 15px;
 }
 
-.name {
-  color: white;
+.paintedSection {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  @media all and (min-width: 768px) {
+    display: grid;
+    grid-template-columns: (1, 1fr, 1fr, 1fr);
+    justify-content: center;
+    align-items: center;
+  }
+  @media all and (min-width: 1200px) {
+    display: grid;
+    grid-template-columns: (1, 1fr, 1fr, 1fr);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ul__list {
+    padding-right: 40px;
+
+    &__containerCharacter {
+      justify-content: center;
+      align-items: center;
+      margin-top: 25px;
+      border: solid 15px rgb(138, 214, 218);
+      border-radius: 8px;
+      box-shadow: 2.5px 3.5px 3px rgb(200, 248, 251);
+      height: 300px;
+      width: 175px;
+      background-color: rgb(138, 214, 218);
+      @media all and (min-width: 768px) {
+        height: 480px;
+        width: 300px;
+      }
+      &__p {
+        font-family: 'Gemunu Libre', sans-serif;
+        font-size: 16px;
+        color: white;
+        background-color: rgb(138, 214, 218);
+        padding-bottom: 2px;
+        @media all and (min-width: 768px) {
+          font-size: 22px;
+        }
+      }
+      &__img {
+        height: 165px;
+        width: 165px;
+        border: solid 7px yellowgreen;
+        border-radius: 8px;
+        @media all and (min-width: 768px) {
+          height: 285px;
+          width: 285px;
+        }
+      }
+    }
+  }
 }
