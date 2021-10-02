@@ -7,7 +7,7 @@ const CharacterDetail = (props) => {
         title="image"
         className="ul__list__containerCharacter__img"
       />
-      *
+
       <p className="ul__list__containerCharacter__p">
         👤
         {props.character.name}

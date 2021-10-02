@@ -15,7 +15,7 @@ function getApi() {
           name: characterData.name,
           species: characterData.species,
           status: characterData.status,
-          origin: characterData.origin.name,
+          origin: characterData.origin,
           episode: characterData.episode,
         };
       });
