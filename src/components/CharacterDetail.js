@@ -18,12 +18,10 @@ const CharacterDetail = (props) => {
             {props.character.name}
           </p>
           <p className="containerCharacter__p">
-            👽
-            {props.character.species}
+            {props.character.species === 'Human' ? '👽Human' : '👾Alien'}
           </p>
           <p className="containerCharacter__p">
-            💀
-            {props.character.status}
+            {props.character.status === 'Alive' ? '🤍Alive' : '💀Death'}
           </p>
           <p className="containerCharacter__p">
             🌌{props.character.origin.name}

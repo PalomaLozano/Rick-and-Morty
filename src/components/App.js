@@ -74,7 +74,7 @@ function App() {
                   className="notFound__img"
                 />
                 <p className="notFound__p">
-                  Oh! We´re sorry! This page doesn´t exist! 😓{' '}
+                  Oh! We´re sorry! This page doesn´t exist! 😓
                 </p>
               </div>
             </section>

@@ -15,12 +15,10 @@ const CharacterItem = (props) => {
           {props.character.name}
         </p>
         <p className="ul__list__containerCharacter__p">
-          👽
-          {props.character.species}
+          {props.character.species === 'Human' ? '👽Human' : '👾Alien'}
         </p>
         <p className="ul__list__containerCharacter__p">
-          💀
-          {props.character.status}
+          {props.character.status === 'Alive' ? '🤍Alive' : '💀Death'}
         </p>
       </section>
     </Link>
