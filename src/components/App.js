@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 import '../styles/App.scss';
 import logoRaM from '../images/RaM.png';
+import imgnotfound from '../images/poopybutthole.jpg';
 import api from '../services/listApi';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
@@ -65,13 +66,22 @@ function App() {
           </Route>
 
           <Route>
-            <section>
-              <p>Oh! This page doesn´t exist! 😓 </p>
+            <section className="notFound">
+              <div className="notFound__container">
+                <img
+                  src={imgnotfound}
+                  alt="img not found"
+                  className="notFound__img"
+                />
+                <p className="notFound__p">
+                  Oh! We´re sorry! This page doesn´t exist! 😓{' '}
+                </p>
+              </div>
             </section>
           </Route>
         </Switch>
       </main>
-      <footer>This is the footer</footer>
+      <footer className="footer">Created by paloma.logu</footer>
     </div>
   );
 }

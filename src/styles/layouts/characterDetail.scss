@@ -1,0 +1,72 @@
+.data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(52, 112, 116);
+  font-family: 'Gemunu Libre', sans-serif;
+  font-size: 28px;
+  background-color: rgb(138, 214, 218);
+  height: 50px;
+  text-transform: uppercase;
+  border: solid yellowgreen 6px;
+  border-radius: 10px;
+}
+
+.containerCharacter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 60px;
+  margin-bottom: 60px;
+
+  &__all {
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 700px;
+    background-color: yellowgreen;
+    border: solid rgb(138, 214, 218) 6px;
+    border-radius: 7px;
+  }
+  &__btn {
+    width: 130px;
+    height: 40px;
+    margin: 10px;
+    margin-top: 10px;
+    margin-left: 85px;
+    background-color: rgb(138, 214, 218);
+    border-radius: 10px;
+    border: solid yellowgreen 1px;
+    box-shadow: 1.5px 1.5px 2px rgb(52, 112, 116);
+
+    &_p {
+      background-color: rgb(138, 214, 218);
+      color: rgb(51, 111, 114);
+      font-family: 'Gemunu Libre', sans-serif;
+      font-size: 18px;
+    }
+  }
+
+  &__p {
+    background-color: yellowgreen;
+    color: rgb(255, 255, 255);
+    font-family: 'Gemunu Libre', sans-serif;
+    font-size: 18px;
+    margin-top: 25px;
+    padding-top: 10px;
+    padding-left: 40px;
+  }
+
+  &__img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    border-radius: 3px;
+    background-color: yellowgreen;
+  }
+}

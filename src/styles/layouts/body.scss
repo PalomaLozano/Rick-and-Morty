@@ -1,9 +1,12 @@
 * {
-  background-color: black;
   text-decoration: none;
   list-style-type: none;
   box-sizing: content-box;
   max-width: 768px;
+  background-color: rgb(43, 48, 58);
+  margin: 0px;
+  padding: 0px;
+
   @media all and (min-width: 768px) {
     max-width: 100%;
   }
