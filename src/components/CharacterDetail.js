@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 const CharacterDetail = (props) => {
   return (
     <>
-      <p className="data">character info</p>
+      <div className="container">
+        <p className="container__data">Character Info</p>
+      </div>
       <section className="containerCharacter">
         <div className="containerCharacter__all">
           <img

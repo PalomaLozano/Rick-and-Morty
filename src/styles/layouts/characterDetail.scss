@@ -1,16 +1,25 @@
-.data {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: rgb(52, 112, 116);
-  font-family: 'Gemunu Libre', sans-serif;
-  font-size: 28px;
-  background-color: rgb(138, 214, 218);
-  height: 50px;
-  text-transform: uppercase;
-  border: solid yellowgreen 6px;
-  border-radius: 10px;
+.container {
+  background-color: rgb(52, 112, 116);
+  border: solid yellowgreen 2px;
+  border-radius: 7px;
+  &__data {
+    padding: 10px;
+    text-align: center;
+    font-size: 60px;
+    font-family: 'Gemunu Libre', sans-serif;
+    color: transparent;
+    background-image: linear-gradient(
+      to left,
+      #ffd700,
+      #7b68ee,
+      #3498db,
+      #2ecc71,
+      #ffd700
+    );
+    background-clip: text;
+    animation: color 3s linear infinite;
+    background-size: 500%;
+  }
 }
 
 .containerCharacter {

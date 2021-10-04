@@ -10,6 +10,7 @@ const CharacterList = (props) => {
     ) : (
       <p className="noexist">We can´t find this character 😓 </p>
     );
+
   return (
     <>
       <h2 className="h2">Characters</h2>

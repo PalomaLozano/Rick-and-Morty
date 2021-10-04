@@ -28,6 +28,7 @@ function App() {
 
   const handleCharacter = (value) => {
     setCharacterName(value);
+    orderedList();
   };
 
   const handleSpecies = (ev) => {
@@ -45,7 +46,9 @@ function App() {
       (character) =>
         characterSpecies === 'all' || character.species === characterSpecies
     );
-
+  const orderedList = () => {
+    characterData.sort((a, b) => a.localeCompare(b));
+  };
   return (
     <div>
       <header className="header">
