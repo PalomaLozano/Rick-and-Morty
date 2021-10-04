@@ -13,7 +13,7 @@ const FilterByCharacter = (props) => {
         name="name"
         id="search"
         className="form__inputform"
-        placeholder="🔍"
+        placeholder="🔍Name"
         value={props.characterName}
         onChange={handleCharacter}
       />

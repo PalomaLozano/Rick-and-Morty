@@ -11,6 +11,7 @@ import Filters from './Filters';
 function App() {
   const [characterData, setCharacterData] = useState([]);
   const [characterName, setCharacterName] = useState('');
+  const [characterSpecies, setCharacterSpecies] = useState('all');
   const routeCharacter = useRouteMatch('/character/:id');
 
   const characterId = routeCharacter !== null ? routeCharacter.params.id : '';
@@ -29,11 +30,21 @@ function App() {
     setCharacterName(value);
   };
 
-  const filteredcharacterData = characterData.filter((character) =>
-    character.name
-      .toLocaleLowerCase()
-      .includes(characterName.toLocaleLowerCase())
-  );
+  const handleSpecies = (ev) => {
+    ev.preventDefault();
+    setCharacterSpecies(ev.currentTarget.value);
+  };
+
+  const filteredcharacterData = characterData
+    .filter((character) =>
+      character.name
+        .toLocaleLowerCase()
+        .includes(characterName.toLocaleLowerCase())
+    )
+    .filter(
+      (character) =>
+        characterSpecies === 'all' || character.species === characterSpecies
+    );
 
   return (
     <div>
@@ -58,6 +69,8 @@ function App() {
               <Filters
                 characterName={characterName}
                 handleCharacter={handleCharacter}
+                characterSpecies={characterSpecies}
+                handleSpecies={handleSpecies}
               />
             </section>
             <section>

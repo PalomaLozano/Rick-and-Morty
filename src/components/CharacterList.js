@@ -1,10 +1,15 @@
 import CharacterItem from './CharacterItem';
 const CharacterList = (props) => {
-  const html = props.characterData.map((character) => (
-    <li key={character.id}>
-      <CharacterItem character={character} />
-    </li>
-  ));
+  const html =
+    props.characterData.length !== 0 ? (
+      props.characterData.map((character) => (
+        <li key={character.id}>
+          <CharacterItem character={character} />
+        </li>
+      ))
+    ) : (
+      <p className="noexist">We can´t find this character 😓 </p>
+    );
   return (
     <>
       <h2 className="h2">Characters</h2>

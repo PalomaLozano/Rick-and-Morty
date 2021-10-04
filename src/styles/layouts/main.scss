@@ -1,14 +1,18 @@
 .form {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   font-family: 'Gemunu Libre', sans-serif;
+  padding-bottom: 80px;
+  padding-left: 15px;
+
   &__inputlabel {
     color: rgb(138, 214, 218);
-    padding: 25px;
-    padding-right: 20px;
-    font-size: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 24px;
+    padding-right: 15px;
     @media all and (min-width: 768px) {
       font-size: 50px;
     }
@@ -17,6 +21,7 @@
     background-color: rgb(138, 214, 218);
     padding: 5px;
     margin-right: 20px;
+    margin-top: 10px;
     height: 30px;
     width: 150px;
     color: white;
@@ -128,13 +133,10 @@
   }
 
   &__p {
-    padding: 33px;
-    color: rgb(28, 113, 121);
-    background-color: yellowgreen;
+    padding: 10px;
+    color: #bdff80;
     font-family: 'Gemunu Libre', sans-serif;
     font-size: 20px;
-    border: solid rgb(138, 214, 218) 5px;
-    border-radius: 7px;
 
     @media all and (min-width: 768px) {
       font-size: 30px;
@@ -149,5 +151,38 @@
       height: 400px;
       width: 600px;
     }
+  }
+}
+
+.noexist {
+  color: #bdff80;
+  padding: 10px;
+  margin-bottom: 380px;
+  font-family: 'Gemunu Libre', sans-serif;
+  font-size: 20px;
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  background-color: rgb(28, 113, 121);
+  border: solid #bdff80 5px;
+  border-radius: 7px;
+}
+
+.optionSpecie {
+  height: 38px;
+  width: 160px;
+  margin-top: 20px;
+  margin-right: 18px;
+  color: white;
+  font-size: 20px;
+  font-family: 'Gemunu Libre', sans-serif;
+  border-radius: 5px;
+  border: solid yellowgreen 5px;
+  box-shadow: 1.5px 1.5px 6px #bdff80;
+  background-color: rgb(138, 214, 218);
+  @media all and (min-width: 768px) {
+    height: 48px;
+    width: 410px;
+    font-size: 35px;
   }
 }
