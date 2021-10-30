@@ -1,5 +1,6 @@
 import FilterByCharacter from './FilterByCharacter';
 import FilterBySpecie from './FilterBySpecie';
+import FilterByLocalization from './FilterByLocalization';
 const Filters = (props) => {
   return (
     <>
@@ -11,6 +12,10 @@ const Filters = (props) => {
         <FilterBySpecie
           characterSpecies={props.characterSpecies}
           handleSpecies={props.handleSpecies}
+        />
+        <FilterByLocalization
+          characterLocation={props.characterLocation}
+          handleLocation={props.handleLocation}
         />
       </form>
     </>

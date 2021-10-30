@@ -20,6 +20,9 @@ const CharacterItem = (props) => {
         <p className="ul__list__containerCharacter__p">
           {props.character.status === 'Alive' ? '🤍Alive' : '💀Death'}
         </p>
+        <p className="ul__list__containerCharacter__location">
+          🌌{props.character.location}
+        </p>
       </section>
     </Link>
   );

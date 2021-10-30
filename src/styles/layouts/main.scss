@@ -66,42 +66,22 @@
 }
 
 .paintedSection {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
   margin-left: 40px;
   margin-bottom: 50px;
-
-  @media all and (min-width: 768px) {
-    display: grid;
-    grid-template-columns: (1, 1fr, 1fr, 1fr);
-    justify-content: center;
-    align-items: center;
-  }
-  @media all and (min-width: 1200px) {
-    display: grid;
-    grid-template-columns: (1, 1fr, 1fr, 1fr);
-    justify-content: center;
-    align-items: center;
-  }
 
   .ul__list {
     padding-right: 40px;
 
     &__containerCharacter {
-      justify-content: center;
-      align-items: center;
       margin-top: 25px;
       border: solid 15px rgb(138, 214, 218);
       border-radius: 8px;
       box-shadow: 2.5px 3.5px 3px rgb(200, 248, 251);
-      height: 300px;
+      height: 320px;
       width: 175px;
       background-color: rgb(138, 214, 218);
       @media all and (min-width: 768px) {
-        height: 480px;
+        height: 500px;
         width: 300px;
       }
       &__p {
@@ -109,10 +89,21 @@
         font-size: 16px;
         color: white;
         background-color: rgb(138, 214, 218);
-        padding-top: 15px;
+        padding-top: 8px;
         @media all and (min-width: 768px) {
           font-size: 22px;
-          padding-top: 22px;
+          padding-top: 18px;
+        }
+      }
+      &__location {
+        font-family: 'Gemunu Libre', sans-serif;
+        font-size: 16px;
+        color: rgb(28, 113, 121);
+        background-color: rgb(138, 214, 218);
+        padding-top: 8px;
+        @media all and (min-width: 768px) {
+          font-size: 22px;
+          padding-top: 18px;
         }
       }
       &__img {

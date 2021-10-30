@@ -13,13 +13,50 @@ function getApi() {
           status: characterData.status,
           origin: characterData.origin,
           episode: characterData.episode.length,
+          location: characterData.location.name,
         };
       });
     });
 }
 
+const bringInfo = () => {
+  return fetch('https://rickandmortyapi.com/api/character/?page=1')
+    .then((response) => response.json())
+    .then((data) => {
+      return {
+        count: data.info.count,
+        pages: data.info.pages,
+        next: data.info.next,
+        prev: data.info.prev,
+      };
+    });
+};
+
+const nextPages = (numPage) => {
+  if (numPage !== null) {
+    return fetch(`https://rickandmortyapi.com/api/character/?page=${numPage}`)
+      .then((response) => response.json())
+      .then((data) => {
+        return data.results.map((characterData) => {
+          return {
+            image: characterData.image,
+            id: characterData.id,
+            name: characterData.name,
+            species: characterData.species,
+            status: characterData.status,
+            origin: characterData.origin,
+            episode: characterData.episode.length,
+            location: characterData.location.name,
+          };
+        });
+      });
+  }
+};
+
 const CharactersApi = {
   getApi: getApi,
+  bringInfo: bringInfo,
+  nextPages: nextPages,
 };
 
 export default CharactersApi;

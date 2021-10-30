@@ -21,7 +21,39 @@
     background-size: 500%;
   }
 }
-
+.containerList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .containerPages {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    &__button {
+      background-color: rgb(52, 112, 116);
+      border-radius: 10px;
+      border: solid 2px yellowgreen;
+      font-family: 'Gemunu Libre', sans-serif;
+      box-shadow: none;
+      color: rgb(138, 214, 218);
+      margin-left: 10px;
+      margin-right: 10px;
+      padding: 10px;
+      font-size: 16px;
+    }
+    &__input {
+      box-shadow: none;
+      border: none;
+      color: rgb(138, 214, 218);
+      font-size: 16px;
+      font-family: 'Gemunu Libre', sans-serif;
+      width: 35px;
+    }
+  }
+}
 .containerCharacter {
   display: flex;
   flex-direction: column;
@@ -80,4 +112,8 @@
     border: solid rgb(138, 214, 218) 8px;
     background-color: yellowgreen;
   }
+}
+
+.hidden {
+  display: none;
 }

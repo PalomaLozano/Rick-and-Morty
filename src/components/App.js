@@ -7,18 +7,23 @@ import api from '../services/listApi';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
 import Filters from './Filters';
+import Pages from './Pages';
 
 function App() {
   const [characterData, setCharacterData] = useState([]);
   const [characterName, setCharacterName] = useState('');
   const [characterSpecies, setCharacterSpecies] = useState('all');
+  const [characterLocation, setCharacterLocation] = useState('');
+  const [pages, setPages] = useState('');
+  const [numPage, setNumPage] = useState(1);
+  let contPage;
   const routeCharacter = useRouteMatch('/character/:id');
 
-  const characterId = routeCharacter !== null ? routeCharacter.params.id : '';
-
-  const selectedCharacter = characterData.find(
-    (character) => character.id === parseInt(characterId)
-  );
+  useEffect(() => {
+    api.bringInfo().then((response) => {
+      setPages(response.pages);
+    });
+  }, []);
 
   useEffect(() => {
     api.getApi().then((initialData) => {
@@ -26,14 +31,29 @@ function App() {
     });
   }, []);
 
+  useEffect(() => {
+    api.nextPages(numPage).then((response) => {
+      setCharacterData(response);
+    });
+  }, [numPage]);
+
+  const characterId = routeCharacter !== null ? routeCharacter.params.id : '';
+
+  const selectedCharacter = characterData.find(
+    (character) => character.id === parseInt(characterId)
+  );
+
   const handleCharacter = (value) => {
     setCharacterName(value);
-    orderedList();
   };
 
   const handleSpecies = (ev) => {
     ev.preventDefault();
     setCharacterSpecies(ev.currentTarget.value);
+  };
+
+  const handleLocation = (ev) => {
+    setCharacterLocation(ev.currentTarget.value);
   };
 
   const filteredcharacterData = characterData
@@ -45,10 +65,28 @@ function App() {
     .filter(
       (character) =>
         characterSpecies === 'all' || character.species === characterSpecies
+    )
+
+    .filter((character) =>
+      character.location
+        .toLocaleLowerCase()
+        .includes(characterLocation.toLocaleLowerCase())
     );
-  const orderedList = () => {
-    characterData.sort((a, b) => a.localeCompare(b));
+
+  const handleNextPage = (ev) => {
+    contPage = numPage + 1;
+    setNumPage(contPage);
   };
+
+  const handlePrevPage = (ev) => {
+    contPage = numPage - 1;
+    setNumPage(contPage);
+  };
+
+  const handlePage = (value) => {
+    setNumPage(value);
+  };
+
   return (
     <div>
       <header className="header">
@@ -74,10 +112,27 @@ function App() {
                 handleCharacter={handleCharacter}
                 characterSpecies={characterSpecies}
                 handleSpecies={handleSpecies}
+                characterLocation={characterLocation}
+                handleLocation={handleLocation}
               />
             </section>
-            <section>
+
+            <section className="containerList">
+              <Pages
+                numPage={numPage}
+                pages={pages}
+                handlePrevPage={handlePrevPage}
+                handleNextPage={handleNextPage}
+                handlePage={handlePage}
+              />
               <CharacterList characterData={filteredcharacterData} />
+              <Pages
+                numPage={numPage}
+                pages={pages}
+                handlePrevPage={handlePrevPage}
+                handleNextPage={handleNextPage}
+                handlePage={handlePage}
+              />
             </section>
           </Route>
 
